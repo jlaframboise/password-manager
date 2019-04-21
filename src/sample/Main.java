@@ -45,10 +45,13 @@ public class Main extends Application {
         Label vaultPathLabel = new Label("File path for vault");
         TextField vaultPathField = new TextField("Vault Path");
         Button saveVaultButton = new Button("Save vault");
-        saveVaultButton.setOnAction(e->vault.saveVault(vaultPathField.getText()));
+        saveVaultButton.setOnAction(e->vault.saveVault(vaultPathField.getText(), 2));
+
+        Button loadVaultButton = new Button("Load Vault");
+        loadVaultButton.setOnAction(e-> vault.loadVault(vaultPathField.getText(), 2));
 
         VBox layout = new VBox(10);
-        layout.getChildren().addAll(addPassButton, viewVaultButton, vaultPathLabel, vaultPathField, saveVaultButton);
+        layout.getChildren().addAll(addPassButton, viewVaultButton, vaultPathLabel, vaultPathField, saveVaultButton, loadVaultButton);
         layout.setAlignment(Pos.CENTER);
         Scene scene = new Scene(layout);
         window.setScene(scene);

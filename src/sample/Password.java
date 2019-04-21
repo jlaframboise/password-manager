@@ -47,19 +47,35 @@ public class Password {
         this.userName = userName;
     }
 
-    public void Password(){};
+    public Password(){};
 
 
 
-    public void Password(String password, String userName){
+    public Password(String password, String userName){
         this.password = password;
         this.userName = userName;
+    }
+
+    public Password(String encryptedText, int shift){
+        String plaintext = Encryption.decrypt(encryptedText, shift);
+        String[] parts = plaintext.split("\n");
+        this.setSiteTitle(parts[0]);
+        this.setUserName(parts[1]);
+        this.setPassword(parts[2]);
+        this.setUrl(parts[3]);
+        this.setNotes(parts[4]);
     }
 
     public String toString(){
         String s = String.format("<<Entry-Start\n%s\n%s\n%s\n%s\n%s\nEntry-End>>", getSiteTitle(), getUserName(), getPassword(), getUrl(), getNotes());
 
+        return s;
+    }
 
+    public String toEncryptedString(int shift){
+        String s = "<<Entry-Start\n" +
+                Encryption.encrypt(String.format("%s\n%s\n%s\n%s\n%s", getSiteTitle(), getUserName(), getPassword(), getUrl(), getNotes()), shift) +
+                "\nEntry-End>>";
         return s;
     }
 
