@@ -49,13 +49,15 @@ public class Password {
 
     public void Password(){};
 
+
+
     public void Password(String password, String userName){
         this.password = password;
         this.userName = userName;
     }
 
     public String toString(){
-        String s = String.format("***Entry:\n%s\n%s\n%s\n%s\n%s\nEnd***", getSiteTitle(), getUserName(), getPassword(), getUrl(), getNotes());
+        String s = String.format("<<Entry-Start\n%s\n%s\n%s\n%s\n%s\nEntry-End>>", getSiteTitle(), getUserName(), getPassword(), getUrl(), getNotes());
 
 
         return s;

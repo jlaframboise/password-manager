@@ -23,6 +23,8 @@ public class Main extends Application {
         //Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         window = primaryStage;
         window.setTitle("JPass - Home");
+        window.setMinWidth(300);
+        window.setMinHeight(500);
 
         Vault vault = new Vault();
 
@@ -57,6 +59,10 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
+//        System.out.println("Encrypting");
+//        System.out.println(Encryption.encrypt("~", 1));
+//        System.out.println("Decrypting");
+//        System.out.println(Encryption.decrypt(" ", 1));
         launch(args);
     }
 }
