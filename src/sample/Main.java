@@ -48,7 +48,7 @@ public class Main extends Application {
         VBox layout = new VBox(10);
         layout.getChildren().addAll(addPassButton, viewVaultButton, vaultPathLabel, vaultPathField, saveVaultButton);
         layout.setAlignment(Pos.CENTER);
-        Scene scene = new Scene(layout, 400, 600);
+        Scene scene = new Scene(layout);
         window.setScene(scene);
         window.show();
         //primaryStage.setScene(new Scene(root, 300, 275));

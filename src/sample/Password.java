@@ -1,19 +1,26 @@
 package sample;
 
 public class Password {
-    private String password;
-    private String siteName;
-    private String url;
+    private String siteTitle;
     private String userName;
-    private String firstName;
-    private String lastName;
+    private String password;
+    private String url;
+    private String notes;
+
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
 
     public String getPassword() {
         return password;
     }
 
-    public String getSiteName() {
-        return siteName;
+    public String getSiteTitle() {
+        return siteTitle;
     }
 
     public String getUrl() {
@@ -24,20 +31,12 @@ public class Password {
         return userName;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
     public void setPassword(String password) {
         this.password = password;
     }
 
-    public void setSiteName(String siteName) {
-        this.siteName = siteName;
+    public void setSiteTitle(String siteTitle) {
+        this.siteTitle = siteTitle;
     }
 
     public void setUrl(String url) {
@@ -48,14 +47,6 @@ public class Password {
         this.userName = userName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
     public void Password(){};
 
     public void Password(String password, String userName){
@@ -64,7 +55,9 @@ public class Password {
     }
 
     public String toString(){
-        String s = String.format("||%s||%s||%s", getSiteName(), getUserName(), getPassword());
+        String s = String.format("***Entry:\n%s\n%s\n%s\n%s\n%s\nEnd***", getSiteTitle(), getUserName(), getPassword(), getUrl(), getNotes());
+
+
         return s;
     }
 

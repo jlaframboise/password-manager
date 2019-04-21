@@ -48,7 +48,7 @@ public class PasswordAddForm {
         Button addPasswordButton = new Button("Add Password");
         addPasswordButton.setOnAction(e->{
             p = new Password();
-            p.setSiteName(titleField.getText());
+            p.setSiteTitle(titleField.getText());
             p.setUserName(usernameField.getText());
             p.setPassword(passwordField.getText());
             p.setUrl(urlField.getText());
